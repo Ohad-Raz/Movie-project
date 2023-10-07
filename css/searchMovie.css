@@ -1,0 +1,103 @@
+
+
+
+.movie-card {
+  width: 22%;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: stretch;
+  flex-direction: column-reverse
+}
+
+.movie-container {flex: 0 0 calc(22% - 1rem);
+  text-align: center;
+  margin-bottom: 10rem;
+  box-sizing: border-box;
+  position: relative;
+  transition: background 0.3s ease; 
+
+}
+
+#movieImg {
+  width: 100%;
+  height: auto;
+  max-height: 100%;
+  max-width: 100%;
+}
+
+#titleAndHeart {
+  display: block;
+  margin-top: 0.25rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  width: 100%;
+  top: 100%;
+  background: rgba(255, 255, 255, 0.361);
+  padding: 0.2rem 0;
+  transition: background 0.9s ease, top 0.8s ease; /* Added transition for smooth effect */
+  z-index: 1;
+}
+
+#smallTitle{
+  color: black;
+  font-weight: 500;
+  transition: color 0.8s ease; /* Added transition for smooth effect */
+}
+
+#titleAndHeart b {
+  white-space: normal;
+  height: 5rem;
+  overflow: hidden; 
+  display: block;
+  font-size:1.2rem ;
+  transition: color 0.8s ease; /* Added transition for smooth effect */
+}
+
+#titleAndHeart:hover {
+  max-height: none; /* Show full content on hover */
+}
+.heart-icon {
+  font-size: 1.28em; /* Adjust the font size for the heart icon (responsive) */
+  /* Add some space between title and heart icon */
+}
+.movie-container:hover #movieImg {
+  z-index: 1;
+}
+
+.movie-container:hover #titleAndHeart {
+  top: 72%; /* Move the title and heart towards the bottom */
+  background: rgba(255, 255, 255, 0.646);
+}
+
+.movie-container:hover #titleAndHeart b {
+  color: #242323;
+}
+
+/* For screens smaller than 1000px */
+@media (max-width: 1000px) {
+  .movie-card {
+    width: 30%; /* Adjust the width as needed */
+  }
+}
+
+/* For screens smaller than 700px */
+@media (max-width: 700px) {
+  .movie-card {
+    width: 45%; /* Adjust the width as needed */
+  }
+}
+
+/* For phones (smaller screens) */
+@media (max-width: 480px) {
+  .movie-card {
+    width: 100%; /* Show 1 movie in a row (full width) */
+  }
+}
+
