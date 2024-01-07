@@ -8,11 +8,12 @@ document.addEventListener("DOMContentLoaded", () => {
     movieCard.className = "movie-card";
 
     const movieTitle = document.createElement("p");
-    movieTitle.textContent = `Title: ${movieData.title}`;
+    movieTitle.textContent = ` ${movieData.title}`;
+    movieTitle.className = "movie-title";
 
     const moviePoster = document.createElement("img");
     moviePoster.src = `https://image.tmdb.org/t/p/original${movieData.poster_path}`;
-
+    moviePoster.className="movie-Poster";
     moviePoster.alt = movieData.title;
 
     const heartIcon = document.createElement("i");
@@ -47,7 +48,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function displayLikedMovies() {
-    likedMoviesList.innerHTML = "<h2>Liked Movies</h2>";
+    likedMoviesList.innerHTML = `<h2 class="favorite-Header">Liked Movies</h2>`;
     const movieCardContainer = document.createElement("div");
     movieCardContainer.className = "movie-card-container";
 

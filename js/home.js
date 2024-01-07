@@ -23,6 +23,8 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     }
 
+    
+/*check*/
     // fetch(url)
     //   .then((res) => res.json())
     //   .then((data) => {
@@ -36,6 +38,19 @@ document.addEventListener('DOMContentLoaded', () => {
     //         `;
     //     });
         
+  //   fetch(url)
+  // .then((res) => res.json())
+  // .then((data) => {
+  //   console.log(data);
+  //   moviesPresentation.innerHTML = '';
+  //   data.results.forEach((movieResult) => {
+  //     moviesPresentation.innerHTML += `
+  //       <p id="titleAndHeart">title:${movieResult.title}<i class="heart-icon fa-regular fa-heart" style="color: #ff0000;"></i></p>
+  //       <img style="width: 20%; height: auto;" src="https://image.tmdb.org/t/p/original${movieResult.poster_path}" />
+  //     `;
+  //   });
+  // });
+/*check end*/
 
         fetch(url)
         .then((res) => res.json())
@@ -47,7 +62,7 @@ document.addEventListener('DOMContentLoaded', () => {
             <div class="movie-container">
              
               <img id="movieImg"  src="https://image.tmdb.org/t/p/original${movieResult.poster_path}" />
-              <p id="titleAndHeart"><small id="smallTitle">title: </small> <b>${movieResult.title}<b><i class="heart-icon fa-regular fa-heart" style="color: #ff0000;"></i></p>
+              <p id="titleAndHeart"><small id="smallTitle"></small> <b>${movieResult.title}<b><i class="heart-icon fa-regular fa-heart" style="color: #ff0000;"></i></p>
             </div>
           `;
           });
@@ -55,51 +70,113 @@ document.addEventListener('DOMContentLoaded', () => {
 
         
 
+
+        // moviesPresentation.addEventListener('click', (event) => {
+        //   const target = event.target;
+        //   const heartIcon = target.tagName === 'I' && target.classList.contains('fa-heart')
+        //     ? target
+        //     : target.closest('i.fa-heart');
+
+        //   if (heartIcon) {
+        //     const movieTitle = target.closest('p').textContent.split(':')[1].trim();
+        //     const movieData = data.results.find((movieResult) => movieResult.title === movieTitle);
+
+        //     if (heartIcon.classList.contains('fa-regular')) {
+        //       heartIcon.classList.remove('fa-regular');
+        //       heartIcon.classList.add('fa-solid');
+        //       heartIcon.style.color = '#ff0000';
+
+        //       if (movieData) {
+        //         likedMoviesArray.push(movieData);
+        //       }
+        //     } else if (heartIcon.classList.contains('fa-solid')) {
+        //       heartIcon.classList.remove('fa-solid');
+        //       heartIcon.classList.add('fa-regular');
+
+        //       if (movieData) {
+        //         const index = likedMoviesArray.findIndex((movie) => movie.id === movieData.id);
+        //         if (index !== -1) {
+        //           likedMoviesArray.splice(index, 1);
+        //         }
+        //       }
+        //     }
+
+        //     localStorage.setItem("likedMovies", JSON.stringify(likedMoviesArray));
+        //   }
+        // });
+
+        
         moviesPresentation.addEventListener('click', (event) => {
           const target = event.target;
           const heartIcon = target.tagName === 'I' && target.classList.contains('fa-heart')
             ? target
             : target.closest('i.fa-heart');
-
+        
           if (heartIcon) {
-            const movieTitle = target.closest('p').textContent.split(':')[1].trim();
-            const movieData = data.results.find((movieResult) => movieResult.title === movieTitle);
-
-            if (heartIcon.classList.contains('fa-regular')) {
-              heartIcon.classList.remove('fa-regular');
-              heartIcon.classList.add('fa-solid');
-              heartIcon.style.color = '#ff0000';
-
-              if (movieData) {
-                likedMoviesArray.push(movieData);
-              }
-            } else if (heartIcon.classList.contains('fa-solid')) {
-              heartIcon.classList.remove('fa-solid');
-              heartIcon.classList.add('fa-regular');
-
-              if (movieData) {
-                const index = likedMoviesArray.findIndex((movie) => movie.id === movieData.id);
-                if (index !== -1) {
-                  likedMoviesArray.splice(index, 1);
+            let movieParagraph;
+            if (target.tagName === 'P') {
+              movieParagraph = target;
+            } else {
+              movieParagraph = target.closest('p');
+            }
+        
+            if (movieParagraph && movieParagraph.textContent) {
+              const movieTitleParts = movieParagraph.textContent.split(':');
+        
+              if (movieTitleParts.length > 1) {
+                const movieTitle = movieTitleParts[1].trim();
+                const movieData = data.results.find((movieResult) => movieResult.title === movieTitle);
+        
+                if (heartIcon.classList.contains('fa-regular')) {
+                  heartIcon.classList.remove('fa-regular');
+                  heartIcon.classList.add('fa-solid');
+                  heartIcon.style.color = '#ff0000';
+        
+                  if (movieData) {
+                    likedMoviesArray.push(movieData);
+                  }
+                } else if (heartIcon.classList.contains('fa-solid')) {
+                  heartIcon.classList.remove('fa-solid');
+                  heartIcon.classList.add('fa-regular');
+        
+                  if (movieData) {
+                    const index = likedMoviesArray.findIndex((movie) => movie.id === movieData.id);
+                    if (index !== -1) {
+                      likedMoviesArray.splice(index, 1);
+                    }
+                  }
                 }
+        
+                localStorage.setItem("likedMovies", JSON.stringify(likedMoviesArray));
               }
             }
-
-            localStorage.setItem("likedMovies", JSON.stringify(likedMoviesArray));
           }
         });
 
+
+
         const updateHeartIcons = () => {
           const heartIcons = document.querySelectorAll('.heart-icon');
+        
           heartIcons.forEach((heartIcon) => {
-            const movieTitle = heartIcon.closest('p').textContent.split(':')[1].trim();
-            if (likedMoviesArray.some((movie) => movie.title === movieTitle)) {
-              heartIcon.classList.remove('fa-regular');
-              heartIcon.classList.add('fa-solid');
-              heartIcon.style.color = '#ff0000';
+            const movieParagraph = heartIcon.closest('p');
+        
+            if (movieParagraph && movieParagraph.textContent) {
+              const movieTitleParts = movieParagraph.textContent.split(':');
+        
+              if (movieTitleParts.length > 1) {
+                const movieTitle = movieTitleParts[1].trim();
+        
+                if (likedMoviesArray.some((movie) => movie.title === movieTitle)) {
+                  heartIcon.classList.remove('fa-regular');
+                  heartIcon.classList.add('fa-solid');
+                  heartIcon.style.color = '#ff0000';
+                }
+              }
             }
           });
         };
+        
         updateHeartIcons();
         updatePagination(page, data.total_pages);
       })

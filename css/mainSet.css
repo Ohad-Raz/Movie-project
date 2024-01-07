@@ -1,30 +1,30 @@
-
 #tvIcon {
   width: 8rem;
-  }
-
+}
 
 body {
-  background-image:url(../images/movie-background-collage\ 2.jpg) ;
-  background-size: 100% 100%;
+  background-image: url(../images/movie-background-collage\ 2.jpg);
+  min-height: 100vh;
+  background-size: 100vw 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+
   background-color: #343a40;
-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-color: #f8f9fa;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  color: #f8f9fa;
 }
 
 .navbar {
   background-color: rgba(62, 84, 134, 0.614);
 }
 
-
-
 .navbar-nav .nav-link {
   position: relative;
- 
 }
 
 .navbar-nav .nav-link::before {
- 
   content: "";
   position: absolute;
   width: 0;
@@ -32,9 +32,9 @@ color: #f8f9fa;
   bottom: 0;
   left: 50%;
   transform: translateX(-50%);
-  background-color:gold;
+  background-color: gold;
   transition: width 0.3s ease;
-}  
+}
 
 .navbar-nav .nav-link:hover::before {
   width: 100%;
@@ -47,7 +47,7 @@ color: #f8f9fa;
 }
 
 .navbar-nav .nav-item:not(.active) .nav-link {
-  color: rgb(173, 168, 168); 
+  color: rgb(173, 168, 168);
   font-size: 20px;
 }
 
@@ -66,7 +66,7 @@ color: #f8f9fa;
   margin-bottom: 10rem;
   box-sizing: border-box;
   position: relative;
-  transition: background 0.3s ease; 
+  transition: background 0.3s ease;
 }
 
 #movieImg {
@@ -74,6 +74,7 @@ color: #f8f9fa;
   height: auto;
   max-height: 100%;
   max-width: 100%;
+  border-radius: 3%;
 }
 
 #titleAndHeart {
@@ -90,60 +91,84 @@ color: #f8f9fa;
   top: 100%;
   background: rgba(255, 255, 255, 0.361);
   padding: 0.2rem 0;
-  transition: background 0.9s ease, top 0.8s ease; /* Added transition for smooth effect */
-  z-index: 1;
+  transition: background 0.9s ease, top 0.8s ease;
+  z-index: 1; 
+  border-radius: 4%;
+
 }
 
-#smallTitle{
+#smallTitle {
   color: black;
   font-weight: 500;
-  transition: color 0.8s ease; /* Added transition for smooth effect */
+  transition: color 0.8s ease;
 }
 
 #titleAndHeart b {
   white-space: normal;
-  height: 5rem;
-  overflow: hidden; 
+  height: 5.5rem;
   display: block;
-  font-size:1.2rem ;
-  transition: color 0.8s ease; /* Added transition for smooth effect */
+  font-size: 1rem;
+  transition: color 0.8s ease;
+
+
+ 
+}
+
+.movie-container #titleAndHeart {
+  /* default state */
+  transform: translatey(0);
+  background: rgba(255, 255, 255, 0.646);
+  transition: 1.1s ease-in-out; /* apply transition to both hover and default states */
 }
 
 #titleAndHeart:hover {
-  max-height: none; /* Show full content on hover */
+  max-height: none;
 }
 .heart-icon {
-  font-size: 1.28em; /* Adjust the font size for the heart icon (responsive) */
-  /* Add some space between title and heart icon */
+  font-size: 1.28em;
 }
 .movie-container:hover #movieImg {
   z-index: 1;
 }
 
 .movie-container:hover #titleAndHeart {
-  top: 68%; /* Move the title and heart towards the bottom */
+  /* to make the container go up */
+transform: translatey(-105%);
   background: rgba(255, 255, 255, 0.646);
+  transition: 1s ease-in-out;
 }
 
 .movie-container:hover #titleAndHeart b {
   color: #242323;
 }
 
-
-
+#paginationSection {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
+}
 
 .pagination {
   display: flex;
+
   list-style: none;
   padding: 0;
   justify-content: center;
-  position: fixed;
+  /* position: fixed; */
   bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  background-color: rgba(240, 240, 240, 0.18); /* White background with transparency */
+  /* left: 50%;
+  transform: translateX(-50%); */
+  border-radius: 0.5vw;
+
+  background-color: rgba(
+    240,
+    240,
+    240,
+    0.18
+  ); 
   border-top: 1px solid rgba(204, 204, 204, 0.44); /* Light border on top */
-  width: auto;
+  width: 30%;
 }
 
 .page-item {
@@ -183,25 +208,142 @@ color: #f8f9fa;
 
 
 
-/* For screens smaller than 1000px */
+
+
+/* search bar for 2 pages */
+
+
+#search-Container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 2%;
+  border-radius: 0.5em;
+  box-shadow: 0 0 1em rgba(0, 0, 0, 0.1);
+  width: 90%; 
+  margin: auto; 
+}
+
+#searchIdButton {
+  width: 3rem;
+  background-color: rgba(240, 248, 255, 0);
+  border-radius: 50%;
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+
+#searchByIdInput:focus,
+#searchMoviesByName:focus {
+  border-color: #e6d687; 
+  background-color: rgba(255, 255, 255, 0.923); 
+}
+
+#searchByIdInput,
+#searchMoviesByName {
+  padding: 0.5%;
+  margin-right: 1%;
+  border: 1px solid #336699;
+  border-radius: 0.5em;
+  flex-grow: 1;
+  color: #001f3f;
+  background-color: rgba(255, 255, 255, 0.6); /* Transparent white background */
+  font-size: 1.5em;
+  transition: border-color 1.5s ease, background-color 1s ease; 
+}
+
+
+
+#searchByIdInput ::placeholder,
+#searchMoviesByName::placeholder {
+  color: #686868;
+  font-style: italic;
+}
+
+#searchMoviesByNameBtn {
+  position: relative;
+  padding: 0.0em 1em;
+  background: linear-gradient(to right, #e6d687, #d4bf71); /* Adjusted gold color */
+  color: #001f3f;
+  border: none;
+  border-radius: 0.5em;
+  cursor: pointer;
+  overflow: hidden; /* Hide the overflowing part of the shining line */
+}
+
+
+
+#shine-line {
+  position: absolute;
+  top: 0;
+  left: 0; /* Adjusted left position */
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.5));
+  transform: skewX(-20deg); /* Added skew transformation for a slight angle */
+  animation: shine 3.5s infinite linear 2s; /* Added 2 seconds delay before starting the movement */
+}
+
+#searchMoviesByNameBtn:hover #shine-line {
+  left: 100%; /* Move the shining line to the right on hover */
+}
+
+@keyframes shine {
+  0% {
+    left: -100%;
+  }
+ 50% {
+    left: 100%;
+  }
+}
+
+
+
+#searchMoviesByNameBtn:hover {
+  background: linear-gradient(to right, #d4bf71, #e6d687); /* Adjusted gold color on hover */
+  color: #fff;
+  transition: 0.6s linear;
+}
+
+#searchMoviesByNameBtn:active {
+  transform: scale(0.95);
+}
+
+
+
 @media (max-width: 1000px) {
+  #search-Container {
+    width: 100%;
+  }
+  #searchMoviesByName,
+  #searchByIdInput {
+    flex-basis: 100%;
+    margin-right: 0;
+  }
+  
   .movie-container {
-    flex-basis: calc(33.33% - 1rem); /* Show 3 movies in a row */
+    flex-basis: calc(33.33% - 1rem);
   }
 }
 
-/* For screens smaller than 700px */
 @media (max-width: 700px) {
+  #searchMoviesByName,
+  #searchByIdInput {
+    margin-right: 0;
+  }
   .movie-container {
-    flex-basis: calc(50% - 1rem); /* Show 2 movies in a row */
+    flex-basis: calc(50% - 1rem);
   }
 }
 
-/* For phones (smaller screens) */
 @media (max-width: 480px) {
+  #searchMoviesByName,
+  #searchByIdInput {
+    margin-right: 0;
+  }
   .movie-container {
-    flex-basis: 100%; /* Show 1 movie in a row (full width) */
+    flex-basis: 100%;
   }
 }
-
-

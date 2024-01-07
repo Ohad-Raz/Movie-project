@@ -58,8 +58,11 @@
       </nav>
     </div>
     <div id="MainHome">
-      <input id="searchMoviesByName" type="text" />
-      <button id="searchMoviesByNameBtn">search</button>
+      <container id="search-Container">
+      <input id="searchMoviesByName" type="text" placeholder="Search for your beloved movies" />
+      <button id="searchMoviesByNameBtn">
+        <div id="shine-line"></div>
+        search<img src="../images/search icon.png" id="searchIdButton"/></button></container>
       <section id="moviesPresentation"></section>
       <nav  aria-label="...">
         <ul class="pagination">
@@ -96,5 +99,10 @@
       crossorigin="anonymous"
     ></script>
     <script src="../js/searchMovie.js"></script>
+    <!-- <script>
+      function clearPlaceholder() {
+        document.getElementById('searchMoviesByName').placeholder = '';
+      }
+    </script> -->
   </body>
 </html>

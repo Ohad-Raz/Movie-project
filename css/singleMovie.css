@@ -1,15 +1,178 @@
-#searchIdButton {
+body{
+  overflow-x: hidden;
+}
+
+
+
+/* #searchIdButton {
   width: 3rem;
-  background-color: rgba(240, 248, 255, 0.249);
+  background-color: rgba(240, 248, 255, 0);
   border-radius: 50%;
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+
+#searchMoviesByNameBtn {
+  position: relative;
+  padding: 0em 1em;
+  background: linear-gradient(to right, #e6d687, #d4bf71); 
+  color: #001f3f;
+  border: none;
+  border-radius: 0.5em;
+  cursor: pointer;
+  overflow: hidden;  
+}
+
+
+#search-Container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+  margin: auto;
+  padding: 2%;
+  border-radius: 0.5em;
+  box-shadow: 0 0 1em rgba(0, 0, 0, 0.1);
+}
+
+#searchByIdInput {
+  padding: 0.5%;
+  margin-right: 1%;
+  border: 1px solid #336699;
+  border-radius: 0.5em;
+  flex-grow: 1;
+  color: #001f3f;
+  background-color: rgba(255, 255, 255, 0.6); 
+  font-size: 1.5em;
+  transition: border-color 1.5s ease, background-color 1s ease; 
+}
+
+#searchByIdInput:hover {
+  border-color: #e6d687; 
+  background-color: rgba(255, 255, 255, 0.923); 
+}
+
+#shine-line {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.5));
+  transform: skewX(-20deg);
+  animation: shine 3.5s infinite linear 2s;
+}
+
+#searchMoviesByNameBtn:hover #shine-line {
+  left: 100%; 
+}
+
+@keyframes shine {
+  0% {
+    left: -100%;
+  }
+ 50% {
+    left: 100%;
+  }
+}
+
+
+
+#searchMoviesByNameBtn:hover {
+  background: linear-gradient(to right, #d4bf71, #e6d687); 
+  color: #fff;
+}
+
+#searchMoviesByNameBtn:active {
+  transform: scale(0.95);
+}
+
+
+ */
+
+
+
+
+#moviePresentation {
+  display: flex;
+  width: 100%;
+  margin-left: 1%;
+}
+
+#MovieImgBox {
+  flex: 0 0 40%;
+  display: flex;
+  flex-direction: column;
+}
+
+#movieTitle,
+#dateAndRuntime,
+#MoviePoster {
+  margin-bottom: 1rem;
+}
+
+#MoviePoster img {
+  width: 80%;
+  height: auto;
+}
+
+#staff {
+  flex: 0 0 56%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: flex-end;
+  align-items: center;
+}
+
+#movieGenre,
+#movieCrew,
+#movieCast {
+  margin-bottom: 1rem;
+}
+
+#movieCrew,
+#movieCast {
+  display: flex;
+ 
+  
+}
+
+#movieCast {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between; /* Align items in two columns */
+  width: 40%;
+}
+
+#movieCast img {
+  margin-top: 1rem;
+  margin-right: 0.5rem;
+  height: auto;
+  width: 45%; /* Set the width to fill two columns */
+  
 }
 
 
 
 
+@media (max-width: 767px) {
+  #moviePresentation {
+    flex-direction: column;
+  }
 
-/* #moviesPresentation {
-  display:flex;
-  flex-wrap: wrap;
-flex-direction: row;
-} */
+  #MovieImgBox,
+  #staff {
+    flex: 0 0 100%;
+    max-width: 100%;
+    margin-right: 0;
+  }
+
+  #MovieImgBox,
+  #staff {
+    order: 2;
+  }
+}

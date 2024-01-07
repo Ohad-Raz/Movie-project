@@ -39,16 +39,26 @@
 
   </div>
   <div id="MainHome"  >
-  <input id="searchByIdInput" type="number">
-  <img src="../images/search icon.png" id="searchIdButton"/>
-    <section id="moviePresentation" >    
+    <container id="search-Container">
+  <input id="searchByIdInput" type="number" placeholder="Search with movie ID number">
+  <button id="searchMoviesByNameBtn">
+    <div id="shine-line"></div>
+    search<img src="../images/search icon.png" id="searchIdButton"/></button>
+   </container> <section id="moviePresentation" >  
+      
+      <div id="MovieImgBox">
     <section id="movieTitle" ></section>
-    <section id="dateAndRuntime" ></section>
-    <section id="movieGenre" ></section>
+    <section id="dateAndRuntime" ></section> 
+       <section id="MoviePoster" ></section>
+</div>
+       <div id="staff">
+    <section id="movieGenre" ></section><br>
+  
     <section id="movieCrew" ></section>
 <br>
     <section id="movieCast" ></section>
-    <section id="MoviePoster" ></section>
+    </div>
+  
 </section>
 
   </div>
