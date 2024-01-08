@@ -16,9 +16,9 @@ body {
   color: #f8f9fa;
 }
 
-.navbar {
+/* .navbar {
   background-color: rgba(62, 84, 134, 0.614);
-}
+} */
 
 .navbar-nav .nav-link {
   position: relative;
@@ -47,7 +47,7 @@ body {
 }
 
 .navbar-nav .nav-item:not(.active) .nav-link {
-  color: rgb(173, 168, 168);
+  color: rgb(189, 180, 180);
   font-size: 20px;
 }
 
@@ -92,9 +92,8 @@ body {
   background: rgba(255, 255, 255, 0.361);
   padding: 0.2rem 0;
   transition: background 0.9s ease, top 0.8s ease;
-  z-index: 1; 
-  border-radius: 4%;
-
+  z-index: 1;
+  border-radius: 10px;
 }
 
 #smallTitle {
@@ -109,16 +108,13 @@ body {
   display: block;
   font-size: 1rem;
   transition: color 0.8s ease;
-
-
- 
 }
 
 .movie-container #titleAndHeart {
   /* default state */
   transform: translatey(0);
   background: rgba(255, 255, 255, 0.646);
-  transition: 1.1s ease-in-out; /* apply transition to both hover and default states */
+  transition: 1.1s ease-in-out;
 }
 
 #titleAndHeart:hover {
@@ -133,14 +129,58 @@ body {
 
 .movie-container:hover #titleAndHeart {
   /* to make the container go up */
-transform: translatey(-105%);
+  transform: translatey(-105%);
   background: rgba(255, 255, 255, 0.646);
-  transition: 1s ease-in-out;
+  transition: 0.8s ease-in-out;
 }
 
 .movie-container:hover #titleAndHeart b {
   color: #242323;
 }
+
+.navbar {
+  display: flex;
+
+  position: sticky;
+  width: 100%;
+  top: 0;
+  background: rgb(2, 0, 36);
+  background: linear-gradient(
+    90deg,
+    rgba(2, 0, 36, 0.05) 0%,
+    rgba(9, 9, 121, 0.05) 35%,
+    rgba(0, 212, 255, 0.05) 100%
+  );
+  --darkblue: #6168ba61;
+  --lightblue: #00f0ff;
+  background-color: var(--darkblue);
+  /* border-bottom: 4px solid var(--lightblue);
+  box-shadow: 0 0 15px var(--lightblue), inset 0 0 15px var(--lightblue); */
+}
+
+/* .navbar a {
+  color: white;
+  padding: 14px 20px;
+  text-decoration: none;
+  text-align: center;
+  border-radius: 3%;
+
+}
+
+.navbar a:hover {
+  color: rgb(252, 248, 218);
+}
+
+.navbar {
+  animation: blink 1.5s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes blink {
+  50% {
+    border-color: #e0f0fd;
+  }
+} */
 
 #paginationSection {
   display: flex;
@@ -161,26 +201,21 @@ transform: translatey(-105%);
   transform: translateX(-50%); */
   border-radius: 0.5vw;
 
-  background-color: rgba(
-    240,
-    240,
-    240,
-    0.18
-  ); 
-  border-top: 1px solid rgba(204, 204, 204, 0.44); /* Light border on top */
+  background-color: rgba(240, 240, 240, 0.18);
+  border-top: 1px solid rgba(204, 204, 204, 0.44);
   width: 30%;
 }
 
 .page-item {
-  margin: 0 0.3rem; /* Adjusted margin using rem */
+  margin: 0 0.3rem;
 }
 
 .page-link {
   text-decoration: none;
-  color: #ffd700; /* Gold color for the links */
-  border: 1px solid rgb(67, 88, 128); /* Blue border */
-  padding: 0.375rem 0.75rem; /* Adjusted padding using rem */
-  border-radius: 0.25rem; /* Adjusted border radius using rem */
+  color: #ffd700;
+  border: 1px solid rgb(67, 88, 128);
+  padding: 0.375rem 0.75rem;
+  border-radius: 0.25rem;
   cursor: pointer;
   background-color: rgba(67, 88, 128, 0.13);
 }
@@ -205,13 +240,7 @@ transform: translatey(-105%);
   font-weight: bold;
 }
 
-
-
-
-
-
 /* search bar for 2 pages */
-
 
 #search-Container {
   display: flex;
@@ -221,8 +250,8 @@ transform: translatey(-105%);
   padding: 2%;
   border-radius: 0.5em;
   box-shadow: 0 0 1em rgba(0, 0, 0, 0.1);
-  width: 90%; 
-  margin: auto; 
+  width: 90%;
+  margin: auto;
 }
 
 #searchIdButton {
@@ -234,27 +263,36 @@ transform: translatey(-105%);
   overflow: hidden;
 }
 
-
 #searchByIdInput:focus,
 #searchMoviesByName:focus {
-  border-color: #e6d687; 
-  background-color: rgba(255, 255, 255, 0.923); 
+  border-color: #e6d687;
+  background-color: rgba(255, 255, 255, 0.923);
 }
 
 #searchByIdInput,
 #searchMoviesByName {
   padding: 0.5%;
   margin-right: 1%;
-  border: 1px solid #336699;
   border-radius: 0.5em;
   flex-grow: 1;
-  color: #001f3f;
-  background-color: rgba(255, 255, 255, 0.6); /* Transparent white background */
-  font-size: 1.5em;
-  transition: border-color 1.5s ease, background-color 1s ease; 
+  background-color: rgba(255, 255, 255, 0.683);
+  /* background: rgb(2, 0, 36);
+  background: linear-gradient(
+    90deg,
+    rgba(255, 245, 133, 0.6) 0%,
+    rgba(255, 227, 44, 0.6) 35%,
+    rgba(0, 212, 255, 0.7) 100%
+  );
+  --darkblue: #5b5c66;
+  --lightblue: #00f0ff;
+  background-color: var(--darkblue);
+  border: 4px solid var(--lightblue);
+  box-shadow: 0 0 15px var(--lightblue), inset 0 0 15px var(--lightblue); */
+  font-size: 1.6em;
+  transition: border-color 1.5s ease, background-color 1s ease;
+  color: rgb(0, 85, 155);
+  font-weight: 600;
 }
-
-
 
 #searchByIdInput ::placeholder,
 #searchMoviesByName::placeholder {
@@ -264,8 +302,12 @@ transform: translatey(-105%);
 
 #searchMoviesByNameBtn {
   position: relative;
-  padding: 0.0em 1em;
-  background: linear-gradient(to right, #e6d687, #d4bf71); /* Adjusted gold color */
+  padding: 0em 1em;
+  background: linear-gradient(
+    to right,
+    #e6d687,
+    #d4bf71
+  ); /* Adjusted gold color */
   color: #001f3f;
   border: none;
   border-radius: 0.5em;
@@ -273,15 +315,17 @@ transform: translatey(-105%);
   overflow: hidden; /* Hide the overflowing part of the shining line */
 }
 
-
-
 #shine-line {
   position: absolute;
   top: 0;
   left: 0; /* Adjusted left position */
   width: 100%;
   height: 100%;
-  background: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.5));
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0),
+    rgba(255, 255, 255, 0.5)
+  );
   transform: skewX(-20deg); /* Added skew transformation for a slight angle */
   animation: shine 3.5s infinite linear 2s; /* Added 2 seconds delay before starting the movement */
 }
@@ -294,15 +338,17 @@ transform: translatey(-105%);
   0% {
     left: -100%;
   }
- 50% {
+  50% {
     left: 100%;
   }
 }
 
-
-
 #searchMoviesByNameBtn:hover {
-  background: linear-gradient(to right, #d4bf71, #e6d687); /* Adjusted gold color on hover */
+  background: linear-gradient(
+    to right,
+    #d4bf71,
+    #e6d687
+  ); /* Adjusted gold color on hover */
   color: #fff;
   transition: 0.6s linear;
 }
@@ -310,8 +356,6 @@ transform: translatey(-105%);
 #searchMoviesByNameBtn:active {
   transform: scale(0.95);
 }
-
-
 
 @media (max-width: 1000px) {
   #search-Container {
@@ -322,7 +366,7 @@ transform: translatey(-105%);
     flex-basis: 100%;
     margin-right: 0;
   }
-  
+
   .movie-container {
     flex-basis: calc(33.33% - 1rem);
   }

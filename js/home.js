@@ -71,6 +71,22 @@ document.addEventListener('DOMContentLoaded', () => {
         
 
 
+          document.getElementById("dailyId").addEventListener("click", function () {
+            const container = document.getElementById("container-Daily-Weekly");
+            container.classList.add("expanded");
+            // setTimeout(() => container.classList.remove("expanded"), 1000);
+          });
+          
+          document.getElementById("weeklyId").addEventListener("click", function () {
+            const container = document.getElementById("container-Daily-Weekly");
+            container.classList.add("expanded");
+            // setTimeout(() => container.classList.remove("expanded"), 1000);
+          });
+          
+
+
+
+
         // moviesPresentation.addEventListener('click', (event) => {
         //   const target = event.target;
         //   const heartIcon = target.tagName === 'I' && target.classList.contains('fa-heart')

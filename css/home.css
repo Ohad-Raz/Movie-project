@@ -2,10 +2,34 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 1em;
+  
   border-radius: 0.5em;
-  background-color: #f0f8ff;
+  position: relative;
+  top: 1.7em;
+  transition: width 0.5s ease-in-out;
+  width: 18%;
+  margin: auto;
 }
+
+#container-Daily-Weekly.expanded {
+
+}
+
+
+#paginationSection {
+  margin-top: 3em;
+}
+#moviesPresentation {
+position: relative;
+  top: 3em;
+  /* margin-bottom: auto; */
+
+
+  
+}
+
+
+
 
 #dailyId,
 #weeklyId {
@@ -15,7 +39,13 @@
   cursor: pointer;
   margin: 0.5em;
   font-size: 1em;
+  width: 10rem;
+  min-width: 5rem;
+  
 }
+
+
+
 #dailyId {
   padding: 0.7em 1em;
   border: none;
@@ -33,7 +63,7 @@
   background: linear-gradient(to right, #d4bf71, #e6d687);
   color: #fff;
   animation: none;
-  transition: 2s linear;
+  transition: 1s linear;
 }
 
 #weeklyId {
@@ -47,12 +77,14 @@
   color: #fff;
   transition: background 0.9s ease, color 0.3s ease, transform 0.3s ease;
   animation: glow-blue 3s infinite;
+
 }
 
 #weeklyId:hover {
   background: linear-gradient(to right, #005580, #0077cc);
   animation: none;
-  transition: 2s linear;
+  color: #110000c5;
+  transition: 1s linear;
 }
 
 @keyframes glow-gold {

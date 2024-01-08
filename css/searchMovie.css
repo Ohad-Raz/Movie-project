@@ -71,10 +71,10 @@
   z-index: 1;
 }
 
-.movie-container:hover #titleAndHeart {
-  top: 72%; /* Move the title and heart towards the bottom */
+/* .movie-container:hover #titleAndHeart {
+  top: 72%;
   background: rgba(255, 255, 255, 0.646);
-}
+} */
 
 .movie-container:hover #titleAndHeart b {
   color: #242323;
