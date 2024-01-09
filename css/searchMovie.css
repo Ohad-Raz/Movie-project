@@ -27,6 +27,12 @@
   max-width: 100%;
 }
 
+
+
+  
+  
+  
+
 #titleAndHeart {
   display: block;
   margin-top: 0.25rem;
@@ -40,10 +46,15 @@
   width: 100%;
   top: 100%;
   background: rgba(255, 255, 255, 0.361);
-  padding: 0.2rem 0;
+  
   transition: background 0.9s ease, top 0.8s ease; /* Added transition for smooth effect */
   z-index: 1;
+
 }
+
+.fa-heart:before{
+  font-size: 2.6rem;}
+  
 
 #smallTitle{
   color: black;
@@ -56,7 +67,6 @@
   height: 5rem;
   overflow: hidden; 
   display: block;
-  font-size:1.2rem ;
   transition: color 0.8s ease; /* Added transition for smooth effect */
 }
 
