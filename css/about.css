@@ -23,9 +23,10 @@
   margin: 2%;
   padding: 4%;
   border-radius: 10px;
-  background: linear-gradient(135deg, rgba(0, 148, 176, 0.8), rgba(246, 220, 89, 0.2));
+  background: linear-gradient(135deg, rgba(0, 148, 176, 0.8), #3d9fe179,  #d4af378a);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: background 1.5s ease;
+  box-shadow: 0 0 1em rgba(0, 0, 0, 0.626);
 }
 
 .section:hover {
@@ -34,7 +35,7 @@
 }
 
 .section h2 {
-  color: #ffd725;
+  color:  #D4AF37;
   font-size: 1.7em;
   transition: color 0.3s ease;
 }
