@@ -72,7 +72,7 @@ document.addEventListener('DOMContentLoaded', () => {
          ${characterName} : ${actorName} </div></section>`;
       }
   
-      if (i >= 8) {
+      if (i >= 3) {
         break;
       }
     }

@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const dailyId = document.getElementById('dailyId');
   const weeklyId = document.getElementById('weeklyId');
   const pagination = document.querySelector('.pagination');
+  const carousal = document.querySelector('.container');
   let currentPage = 1;
   let popularity = 'day';
 
@@ -77,19 +78,22 @@ document.addEventListener('DOMContentLoaded', () => {
   dailyId.addEventListener('click', () => {
     popularity = 'day';
     currentPage = 1;
+    carousal.style.display = 'none';
     fetchMovies(currentPage, popularity);
     setTimeout(() => {
       document.querySelector('.pagination').style.display = 'flex';
-    }, 1000);
+    }, 1000);  
   });
 
   weeklyId.addEventListener('click', () => {
     popularity = 'week';
     currentPage = 1;
+    carousal.style.display = 'none';
     fetchMovies(currentPage, popularity);
     setTimeout(() => {
       document.querySelector('.pagination').style.display = 'flex';
-    }, 1000);
+    }, 1000); 
+
   });
 
   pagination.addEventListener('click', (event) => {

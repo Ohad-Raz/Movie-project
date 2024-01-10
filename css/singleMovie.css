@@ -222,7 +222,7 @@ text-shadow: 0 0 1em rgba(0, 0, 0, 0.634);
 
 
 #MoviePoster img {
-  width: 80%;
+  width: 100%;
   height: auto;
   border-radius: 1em;
   box-shadow: 0 0 1em rgba(0, 0, 0, 0.337)
@@ -253,7 +253,7 @@ text-shadow: 0 0 1em rgba(0, 0, 0, 0.634);
   margin-top: 1rem;
   margin-right: 0.5rem;
   height: auto;
-  width: 25%;
+  width: 27%;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
 }
 

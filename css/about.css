@@ -35,9 +35,10 @@
 }
 
 .section h2 {
-  color:  #D4AF37;
-  font-size: 1.7em;
-  transition: color 0.3s ease;
+  color:  #e7b81e;
+  font-weight: 800;
+  font-size: 1.6em;
+  transition: color 0.5s ease;
 }
 
 .section:hover h2 {

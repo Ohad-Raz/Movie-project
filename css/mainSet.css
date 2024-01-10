@@ -139,6 +139,7 @@ body {
 }
 
 .navbar {
+
   display: flex;
 
   position: sticky;
@@ -158,29 +159,10 @@ body {
   box-shadow: 0 0 15px var(--lightblue), inset 0 0 15px var(--lightblue); */
 }
 
-/* .navbar a {
-  color: white;
-  padding: 14px 20px;
-  text-decoration: none;
-  text-align: center;
-  border-radius: 3%;
 
+.navbar-collapse {
+  margin-right: 140px;
 }
-
-.navbar a:hover {
-  color: rgb(252, 248, 218);
-}
-
-.navbar {
-  animation: blink 1.5s;
-  animation-iteration-count: infinite;
-}
-
-@keyframes blink {
-  50% {
-    border-color: #e0f0fd;
-  }
-} */
 
 #paginationSection {
   display: flex;
@@ -297,7 +279,7 @@ body {
 #searchByIdInput ::placeholder,
 #searchMoviesByName::placeholder {
   color: #686868;
-  font-style: italic;
+  /* font-style: italic; */
 }
 
 #searchMoviesByNameBtn {
@@ -307,12 +289,12 @@ body {
     to right,
     #e6d687,
     #d4bf71
-  ); /* Adjusted gold color */
+  ); 
   color: #001f3f;
   border: none;
   border-radius: 0.5em;
   cursor: pointer;
-  overflow: hidden; /* Hide the overflowing part of the shining line */
+  overflow: hidden; 
 }
 
 #shine-line {
@@ -326,12 +308,12 @@ body {
     rgba(255, 255, 255, 0),
     rgba(255, 255, 255, 0.5)
   );
-  transform: skewX(-20deg); /* Added skew transformation for a slight angle */
-  animation: shine 3.5s infinite linear 2s; /* Added 2 seconds delay before starting the movement */
+  transform: skewX(-20deg); 
+  animation: shine 3.5s infinite linear 2s; 
 }
 
 #searchMoviesByNameBtn:hover #shine-line {
-  left: 100%; /* Move the shining line to the right on hover */
+  left: 100%;
 }
 
 @keyframes shine {
@@ -348,7 +330,7 @@ body {
     to right,
     #d4bf71,
     #e6d687
-  ); /* Adjusted gold color on hover */
+  ); 
   color: #fff;
   transition: 0.6s linear;
 }
@@ -357,18 +339,59 @@ body {
   transform: scale(0.95);
 }
 
+#footerText {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+#footerDiv {
+  z-index: 0;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+
+
+
 @media (max-width: 1000px) {
   #search-Container {
     width: 100%;
   }
+
   #searchMoviesByName,
   #searchByIdInput {
-    flex-basis: 100%;
-    margin-right: 0;
+    flex-basis: calc(65% - 1rem);
+    margin-right: 1%;
+    font-size: 1.2rem;
+  }
+
+  #searchIdButton {
+    flex-basis: calc(35% - 1rem);
+    max-width: 6rem;
+    font-size: 0.8rem;
   }
 
   .movie-container {
     flex-basis: calc(33.33% - 1rem);
+  }
+
+  #tvIcon {
+    width: 6rem;
+  }
+}
+
+
+@media (max-width: 800px) {
+  
+  #searchIdButton {
+    flex-basis: calc(35% - 1rem);
+    max-width: 2rem;
+    height: 2.2rem;
+
+    font-size: 0.7rem;
   }
 }
 
@@ -376,9 +399,24 @@ body {
   #searchMoviesByName,
   #searchByIdInput {
     margin-right: 0;
+    flex-basis: calc(65% - 1rem);
+    font-size: 1rem;
   }
+
+  #searchIdButton {
+    flex-basis: calc(35% - 1rem);
+    max-width: 1.8rem;
+    max-height: 2rem;
+
+    font-size: 0.7rem;
+  }
+
   .movie-container {
     flex-basis: calc(50% - 1rem);
+  }
+
+  #tvIcon {
+    width: 6rem;
   }
 }
 
@@ -386,8 +424,29 @@ body {
   #searchMoviesByName,
   #searchByIdInput {
     margin-right: 0;
+    flex-basis: 70%;
+    font-size: 1rem;
   }
+
+  #searchMoviesByNameBtn {
+    margin-left: 1%;
+    padding-top: 7px;
+    max-width: 4rem;
+    height: 2rem;
+    font-size: 0.8rem;
+  }
+
+  #searchIdButton {
+    flex-basis: 30%;
+    max-width: 4rem;
+    margin-top: 0.5rem;
+  }
+
   .movie-container {
     flex-basis: 100%;
+  }
+
+  #tvIcon {
+    width: 4rem;
   }
 }

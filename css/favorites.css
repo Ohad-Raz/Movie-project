@@ -58,9 +58,11 @@ align-items: center;
   border-radius: 0.5em;
   cursor: pointer;
   position: absolute;
-  top: 10.5em;
+  top: 25%;
   right:1.5em;
   overflow: hidden;
+  width: auto;
+  height: 8%;
 }
 
 #resetButton:hover {
@@ -168,13 +170,30 @@ align-items: center;
   .movie-card {
     flex-basis: calc(50% - 1rem); 
   }
-}
+  #resetButton {
+top: 20% ;
 
+}}
+
+@media (max-width: 780px) {
+#resetButton {
+width: 20%;
+height:  6.52%;
+text-align: center}
+}
 
 @media (max-width: 480px) {
   .movie-card {
     flex-basis: 100%; 
+
   }
+  #resetButton {
+    top: 22%;
+    right:5% ;
+    
+    }
 }
+
+
 
 
