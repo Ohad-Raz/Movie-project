@@ -21,7 +21,14 @@ height: auto;
 } */
 
 .carousel-item{
-  height: 50rem;
+  height: 44rem;
+
+  
+}
+
+.carousel-inner{
+  border-radius: 1rem;
+ 
 }
 
 .heart-icon{
@@ -209,13 +216,19 @@ position: relative;
 @media (max-width: 576px) {
   #paginationSection {
     margin-top: 1em;
+
   }
+  .carousel-control-prev-icon,
+  .carousel-control-next-icon {
+  margin-bottom: 290%; 
+    font-size: 2rem; }
+  
 }
 
 @media (max-width: 480px) {
   .carousel-control-prev-icon,
 .carousel-control-next-icon {
-margin-bottom: 350%; 
+margin-bottom: 390%; 
   font-size: 2rem; }
 
   
@@ -224,3 +237,14 @@ margin-bottom: 350%;
     margin: auto;
   }
 }
+@media (max-width: 390px) {
+  .carousel-control-prev-icon,
+.carousel-control-next-icon {
+margin-bottom: 490%; 
+  font-size: 2rem; }}
+
+  @media (max-width: 340px) {
+    .carousel-control-prev-icon,
+  .carousel-control-next-icon {
+  margin-bottom: 570%; 
+    font-size: 2rem; }}
