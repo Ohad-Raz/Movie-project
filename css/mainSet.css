@@ -3,7 +3,7 @@
 }
 
 body {
-  background-image: url(../images/movie-background-collage\ 2.jpg);
+  background-image: url(../images/movie-background-collage\ 2.jpg); background-position:top left;background-repeat:repeat;background-attachment:fixed;;
   min-height: 100vh;
   background-size: 100vw 100%;
   background-repeat: no-repeat;

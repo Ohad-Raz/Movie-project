@@ -1,42 +1,37 @@
+/* need to fix reset on small screens */
 
-
-.movie-card-container{
+.movie-card-container {
   display: flex;
   flex-wrap: wrap;
 
-align-items: center;
+  align-items: center;
   justify-content: center;
   align-content: stretch;
-
 }
 .movie-card {
-
   flex: 0 0 calc(22% - 1rem);
   text-align: center;
   margin-bottom: 10rem;
   box-sizing: border-box;
   position: relative;
-  transition: background 0.3s ease; 
+  transition: background 0.3s ease;
   font-size: 1.2rem;
-
 }
 
-.movie-title{
+.movie-title {
   font-size: 1.1rem;
   font-weight: 700;
   margin-right: 3em;
 }
-.movie-Poster{
+.movie-Poster {
   width: 75%;
   height: auto;
   max-height: 100%;
   max-width: 100%;
- border-radius: 3%;
+  border-radius: 3%;
 }
 
-
-
-.favorite-Header{
+.favorite-Header {
   display: flex;
   flex-wrap: wrap;
   align-content: center;
@@ -59,14 +54,18 @@ align-items: center;
   cursor: pointer;
   position: absolute;
   top: 25%;
-  right:1.5em;
+  right: 1.5em;
   overflow: hidden;
   width: auto;
   height: 8%;
 }
 
 #resetButton:hover {
-  background: linear-gradient(to right, #d4bf71, #e6d687); /* Adjusted gold color on hover */
+  background: linear-gradient(
+    to right,
+    #d4bf71,
+    #e6d687
+  ); /* Adjusted gold color on hover */
   color: #fff;
   transition: 0.6s linear;
 }
@@ -77,7 +76,11 @@ align-items: center;
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.5));
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0),
+    rgba(255, 255, 255, 0.5)
+  );
   transform: skewX(-20deg);
   animation: reset-shine 3.5s infinite linear 2s;
 }
@@ -109,11 +112,11 @@ align-items: center;
   top: 100%;
   background: rgba(255, 255, 255, 0.361);
   padding: 0.2rem 0;
-  transition: background 0.9s ease, top 0.8s ease; 
+  transition: background 0.9s ease, top 0.8s ease;
   z-index: 1;
 }
 
-#smallTitle{
+#smallTitle {
   color: black;
   font-weight: 500;
   transition: color 0.8s ease;
@@ -122,24 +125,24 @@ align-items: center;
 #titleAndHeart b {
   white-space: normal;
   height: 5rem;
-  overflow: hidden; 
+  overflow: hidden;
   display: block;
-  font-size:1.2rem ;
-  transition: color 0.8s ease; 
+  font-size: 1.2rem;
+  transition: color 0.8s ease;
 }
 
 #titleAndHeart:hover {
-  max-height: none; 
+  max-height: none;
 }
 .heart-icon {
-  font-size:3em; 
+  font-size: 3em;
 }
 .movie-container:hover #movieImg {
   z-index: 1;
 }
 
 .movie-container:hover #titleAndHeart {
-  top: 72%; 
+  top: 72%;
   background: rgba(255, 255, 255, 0.646);
 }
 
@@ -156,7 +159,7 @@ align-items: center;
 }
 
 .movie-card {
-  flex: 0 0 calc(33.33% - 1rem); 
+  flex: 0 0 calc(33.33% - 1rem);
   text-align: center;
   margin-bottom: 10rem;
   box-sizing: border-box;
@@ -164,36 +167,29 @@ align-items: center;
   transition: background 0.3s ease;
 }
 
-
-
 @media (max-width: 1000px) {
   .movie-card {
-    flex-basis: calc(50% - 1rem); 
+    flex-basis: calc(50% - 1rem);
   }
   #resetButton {
-top: 20% ;
-
-}}
+    top: 20%;
+  }
+}
 
 @media (max-width: 780px) {
-#resetButton {
-width: 20%;
-height:  6.52%;
-text-align: center}
+  #resetButton {
+    width: 20%;
+    height: 6.52%;
+    text-align: center;
+  }
 }
 
 @media (max-width: 480px) {
   .movie-card {
-    flex-basis: 100%; 
-
+    flex-basis: 100%;
   }
   #resetButton {
     top: 22%;
-    right:5% ;
-    
-    }
+    right: 5%;
+  }
 }
-
-
-
-
